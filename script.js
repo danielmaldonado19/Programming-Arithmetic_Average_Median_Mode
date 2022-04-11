@@ -5,38 +5,45 @@ the list elements (no limit elements number). The program has to show the unorde
 2. Insert the formula for the median
 */
 
-var numList = [150, 45, 180, 100];
+var numList = [150, 45, 69, 180];
 
 //1.
-function listAverage(array){
+function listAverage(array){ //This code block sum all the array elements
     let arraySum = array.reduce(sum);
     function sum(totalSum, arrayElement){
         totalSum = totalSum + arrayElement;
         return totalSum;
     }
-    //This code block sum all the array elements
-
+    
     let average = arraySum / array.length;
     return average;
 }
 
-//2.1.
-/*var orderedList = numList.sort(compare); //This code block order the array list
+//2.
+var orderedList = numList.sort(compare); //This code block order the array list
 function compare(a, b){
     comparation = a - b;
     return comparation;
 }
-console.log(numList);
-if(numList.length % 2 === 0){
-    let midSubindex = numList.length / 2;
-    let midNum1 = numList[midSubindex];
-    let midNum2 = numList[midSubindex - 1];
-    let medianList = [midNum1, midNum2];
-    
 
-}
-else{
+function listMedian(array){
+    let midSubindex = parseInt(array.length / 2);   
+    let midNum1 = array[midSubindex];
+    let midNum2 = array[midSubindex - 1];
+    let median;
 
+    if(array.length % 2 === 0){
+    //This conditional applies for a list which has no a center element (its even)
+        
+        median = listAverage([midNum1, midNum2]);
+    }
+    else{
+    //This conditional applies for the list which have a center element (its odd)
+        median = array[midSubindex];
+    }
+
+    return median;
 }
-*/
+
+
 
