@@ -1,0 +1,1 @@
+# arithmetic_average-median-mode
